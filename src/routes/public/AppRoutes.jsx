@@ -7,6 +7,9 @@ import Register from "../../pages/Register/Register";
 import {
     createBrowserRouter,
 } from "react-router-dom";
+import PrivateRoute from "../protected/PrivateRoutes";
+import AddProduct from "../../pages/AddProduct/AddProduct";
+import MyCart from "../../pages/MyCart/MyCart";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +24,14 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/add-product',
+                element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
+            },
+            {
+                path: '/my-cart',
+                element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
             },
             {
                 path: '/login',
