@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <div>
             {/* <h2 className="text-3xl">Navbar</h2> */}
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-100 border">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,9 +30,12 @@ const Navbar = () => {
                             <li><a>Item 3</a></li> */}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">ElecTech Brand Shop</a>
+                    <div className="flex flex-col md:flex-row items-center">
+                        <img src="/logo.jpeg" width={64} alt="" />
+                        <a className="btn btn-ghost normal-case text-xl">ElecTech Brand Shop</a>
+                    </div>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center hidden lg:flex border">
                     <ul className="menu menu-horizontal px-1">
                         {navLinks}
                         {/* <li><a>Item 1</a></li>
