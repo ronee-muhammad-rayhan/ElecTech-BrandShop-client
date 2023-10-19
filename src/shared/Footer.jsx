@@ -18,6 +18,7 @@ const Footer = () => {
                     </div>
                 </nav>
                 <aside>
+                    <a href="https://brandlogos.net/dell-2016-logo-vector-91333.html">AS Cittadella logo</a>
                     <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
                 </aside>
             </footer>
