@@ -68,7 +68,7 @@ const ProductDetails = () => {
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
                         </div>
-                        <Link to={`/my-cart`}><button className="btn glass block mx-auto">Back to Cart</button></Link>
+                        <Link onClick={() => handleAddToCart(_id)}><button className="btn glass block mx-auto">Add to Cart</button></Link>
                     </div>
                 </div>
             </div>

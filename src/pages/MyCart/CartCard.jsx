@@ -37,7 +37,7 @@ const CartCard = ({ product }) => {
                         </div>
                         <div className="flex flex-col items-center gap-3 justify-around pb-4">
                             <Link to={`/product-details/${product._id}`}><button className="btn glass">View Details</button></Link>
-                            <button className="btn glass">Delete from Card</button>
+                            <button className="btn glass">Delete from Cart</button>
                         </div>
                     </div>
                 </div>
