@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import CartCard from "./CartCard";
 
 const MyCart = () => {
     const allProducts = useLoaderData();
@@ -42,9 +43,14 @@ const MyCart = () => {
             })
     }, [allProducts]);
     console.log(cartProducts);
+
+
     return (
         <div>
             <h3 className="text-3xl">My Cart Page:{cartProducts?.length}</h3>
+            {
+                cartProducts.map(product => <CartCard key={product._id} product={product}></CartCard>)
+            }
         </div>
     );
 };
