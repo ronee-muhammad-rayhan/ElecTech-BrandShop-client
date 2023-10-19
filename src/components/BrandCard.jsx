@@ -37,7 +37,7 @@ const BrandCard = ({ product, /* products, setproducts */ }) => {
                     </div>
                     <div className="flex justify-around pb-4">
                         <Link to={`/product-details/${product._id}`}><button className="btn glass">Details</button></Link>
-                        <button className="btn glass">Update</button>
+                        <Link to={`/update-product/${product._id}`}><button className="btn glass">Update</button></Link>
                     </div>
                 </div>
             </div>
