@@ -2,13 +2,17 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import TitleHelmet from "../../components/TitleHelmet";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const { loginUser, setUser } = useAuth();
+    const { loginUser, setUser, loginWithGoogle } = useAuth();
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location);
+
+    const notify = () => toast("Login successfull!!!");
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -20,14 +24,28 @@ const Login = () => {
             .then((userCredential) => {
                 // user logged in successfully
                 setUser(userCredential.user);
-                console.log(userCredential.user)
-                navigate(`${location.state}`)
+                console.log(userCredential.user);
+                notify();
+                navigate(`${location.state}`);
             })
             .catch((error) => {
                 setError(error.message);
                 console.error(error);
             });
     };
+
+    const handleLoginWithGoogle = () => {
+        loginWithGoogle()
+            .then((userCredential) => {
+                console.log(userCredential.user);
+                notify();
+                navigate(`${location.state}`);
+            })
+            .catch((error) => {
+                setError(error.message);
+                console.error(error);
+            });
+    }
 
     return (
         <div>
@@ -75,9 +93,15 @@ const Login = () => {
                         </form>
                         <p className="text-center">Don&apos;t have an account? <Link className="text-blue-600" to='/register'>Register</Link></p>
                         <p className="text-center text-red-600">{error}</p>
+                        <div className="text-center">
+                            <p>or</p>
+                            <p>You can Login with</p>
+                            <Link onClick={handleLoginWithGoogle}><div><button className="btn btn-accent my-4">Google</button></div></Link>
+                        </div>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
