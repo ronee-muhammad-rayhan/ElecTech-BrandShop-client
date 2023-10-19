@@ -1,20 +1,37 @@
+import { useState } from "react";
 import TitleHelmet from "../../components/TitleHelmet";
 import useAuth from "../../hooks/useAuth";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const { createUser } = useAuth();
-    const handleRegister = (e) => {
-        e.preventDefault();
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
+    const handleRegister = (event) => {
+        event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[^a-zA-Z\d]).{6,}$/;
+        if (passwordRegex.test(password)) {
+            console.log("Password is valid");
+        } else {
+            if (password.length < 6) {
+                return setError('Password must be at least 6 characters');
+            }
+            setError('Password should atleast 6 characters long with minimum one capital letter and one special character')
+            return console.log("Password should atleast 6 characters long with minimum one capital letter and one special character");
+        }
         createUser(email, password)
             .then((userCredential) => {
                 // new user has been created
-                console.log(userCredential.user)
+                console.log(userCredential.user);
+                navigate('/');
             })
             .catch((error) => {
+                setError(error.message);
                 console.error(error);
             });
     };
@@ -63,6 +80,8 @@ const Register = () => {
                                 <button className="btn btn-primary">Register</button>
                             </div>
                         </form>
+                        <p className="text-center">Already have an account? <Link className="text-blue-600" to='/login'>Login</Link></p>
+                        <p className="text-center text-red-500">{error}</p>
                     </div>
                 </div>
             </div>

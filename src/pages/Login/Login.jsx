@@ -1,9 +1,11 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import TitleHelmet from "../../components/TitleHelmet";
 import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
 
 const Login = () => {
     const { loginUser, setUser } = useAuth();
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location);
@@ -22,6 +24,7 @@ const Login = () => {
                 navigate(`${location.state}`)
             })
             .catch((error) => {
+                setError(error.message);
                 console.error(error);
             });
     };
@@ -70,6 +73,8 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        <p className="text-center">Don&apos;t have an account? <Link className="text-blue-600" to='/register'>Register</Link></p>
+                        <p className="text-center text-red-600">{error}</p>
                     </div>
                 </div>
             </div>
