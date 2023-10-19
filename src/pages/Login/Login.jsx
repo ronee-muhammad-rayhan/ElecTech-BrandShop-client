@@ -1,8 +1,12 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import TitleHelmet from "../../components/TitleHelmet";
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
     const { loginUser, setUser } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -15,6 +19,7 @@ const Login = () => {
                 // user logged in successfully
                 setUser(userCredential.user);
                 console.log(userCredential.user)
+                navigate(`${location.state}`)
             })
             .catch((error) => {
                 console.error(error);

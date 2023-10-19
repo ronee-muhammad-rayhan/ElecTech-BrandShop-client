@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import { Link } from "react-router-dom";
 
 const BrandCard = ({ product, /* products, setproducts */ }) => {
     const {
@@ -35,7 +36,7 @@ const BrandCard = ({ product, /* products, setproducts */ }) => {
                         <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
                     </div>
                     <div className="flex justify-around pb-4">
-                        <button className="btn glass">Details</button>
+                        <Link to={`/product-details/${product._id}`}><button className="btn glass">Details</button></Link>
                         <button className="btn glass">Update</button>
                     </div>
                 </div>
@@ -52,7 +53,8 @@ BrandCard.propTypes = {
         price: PropTypes.any,
         rating: PropTypes.any,
         shortDescription: PropTypes.any,
-        type: PropTypes.any
+        type: PropTypes.any,
+        _id: PropTypes.any,
     }),
     productss: PropTypes.any,
     setproducts: PropTypes.any
