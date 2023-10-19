@@ -48,9 +48,12 @@ const MyCart = () => {
     return (
         <div>
             <h3 className="text-3xl">My Cart Page:{cartProducts?.length}</h3>
-            {
-                cartProducts.map(product => <CartCard key={product._id} product={product}></CartCard>)
-            }
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full mx-auto">
+                {
+                    cartProducts.map(product => <CartCard key={product._id} product={product}></CartCard>)
+                }
+            </div>
+
         </div>
     );
 };

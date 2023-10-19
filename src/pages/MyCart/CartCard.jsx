@@ -35,8 +35,8 @@ const CartCard = ({ product }) => {
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
                         </div>
-                        <div className="flex justify-around pb-4">
-                            <Link to={`/product-details/${product._id}`}><button className="btn glass">Details</button></Link>
+                        <div className="flex flex-col items-center gap-3 justify-around pb-4">
+                            <Link to={`/product-details/${product._id}`}><button className="btn glass">View Details</button></Link>
                             <button className="btn glass">Delete from Card</button>
                         </div>
                     </div>
