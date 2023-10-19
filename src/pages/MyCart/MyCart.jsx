@@ -5,8 +5,8 @@ const MyCart = () => {
     const allProducts = useLoaderData();
     const [cartProducts, setCartProducts] = useState([]);
     // let productArray = [];
-    let productArr = [];
     useEffect(() => {
+        let productArr = [];
         fetch(`http://localhost:5003/cart-products`)
             .then(res => res.json())
             .then(data => {
@@ -40,7 +40,7 @@ const MyCart = () => {
                 // console.log(filteredProducts);
                 // setCartProducts(filteredProducts);
             })
-    }, []);
+    }, [allProducts]);
     console.log(cartProducts);
     return (
         <div>
