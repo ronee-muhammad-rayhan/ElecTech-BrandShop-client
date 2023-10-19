@@ -79,7 +79,7 @@ const AddProduct = () => {
                             <input
                                 type="text"
                                 name="brandName"
-                                placeholder="Brand Name such as Apple, Samsung, Sony, Google, Intel, etc."
+                                placeholder="Brand Name such as Apple, Samsung, Sony, Google, Intel, Walton etc."
                                 className="input input-bordered w-full"
                             />
                         </label>

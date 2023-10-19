@@ -1,7 +1,8 @@
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
-    const { loginUser } = useAuth();
+    const { loginUser, setUser } = useAuth();
+
     const handleLogin = (e) => {
         e.preventDefault();
         const form = event.target;
@@ -10,7 +11,8 @@ const Login = () => {
         console.log(email, password);
         loginUser(email, password)
             .then((userCredential) => {
-                // new user has been created
+                // user logged in successfully
+                setUser(userCredential.user);
                 console.log(userCredential.user)
             })
             .catch((error) => {
