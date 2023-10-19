@@ -48,7 +48,7 @@ const ProductDetails = () => {
                     <img src={image} alt={`image of ${name}`} />
                 </figure>
                 <div className="border-8 pr-4">
-                    <div>
+                    <div className="text-center">
                         <h2 className="card-title">Name: {name}</h2>
                         <p>{brandName}</p>
                         <p>{type}</p>
@@ -68,7 +68,7 @@ const ProductDetails = () => {
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
                         </div>
-                        <Link onClick={() => handleAddToCart(_id)}><button className="btn glass">Add to Cart</button></Link>
+                        <Link to={`/my-cart`}><button className="btn glass block mx-auto">Back to Cart</button></Link>
                     </div>
                 </div>
             </div>
