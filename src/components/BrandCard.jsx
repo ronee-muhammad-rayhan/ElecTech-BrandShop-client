@@ -6,23 +6,38 @@ const BrandCard = ({ product, /* products, setproducts */ }) => {
         brandName,
         type,
         price,
-        shortDescription,
         rating,
         image, } = product;
 
     return (
-        <div className="card card-side bg-base-100 shadow-xl">
+        <div className="card bg-base-100 shadow-xl">
             <figure>
                 <img src={image} alt={`image of ${name}`} />
             </figure>
-            <div className="flex justify-between border-8 w-full pr-4">
+            <div className="border-8 pr-4">
                 <div>
                     <h2 className="card-title">Name: {name}</h2>
                     <p>{brandName}</p>
                     <p>{type}</p>
                     <p>{price}</p>
-                    <p>{shortDescription}</p>
                     <p>{rating}</p>
+                    <div className="rating rating-lg rating-half">
+                        <input type="radio" name="rating-10" className="rating-hidden" />
+                        <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
+                        <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
+                        <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" checked />
+                        <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
+                        <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
+                        <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
+                        <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
+                        <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
+                        <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
+                        <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
+                    </div>
+                    <div className="flex justify-around pb-4">
+                        <button className="btn glass">Details</button>
+                        <button className="btn glass">Update</button>
+                    </div>
                 </div>
             </div>
         </div>
