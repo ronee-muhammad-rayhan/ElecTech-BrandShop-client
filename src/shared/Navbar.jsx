@@ -1,13 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import './Navbar.css';
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
 
     const navLinks = <>
-        <NavLink to='/'><li><a>Home</a></li></NavLink>
-        <NavLink to='/register'><li><a>Register</a></li></NavLink>
-        <NavLink to='/add-product'><li><a>Add Product</a></li></NavLink>
+        <NavLink to='/' className={isActive => "nav-link" + (!isActive ? " unselected" : "")}><li><a>Home</a></li></NavLink>
+        <NavLink to='/register' style={isActive => ({ color: isActive ? "green" : "blue" })}><li><a>Register</a></li></NavLink>
+        <NavLink to='/add-product' activeStyle={{ fontWeight: "bold", color: "red" }}><li><a>Add Product</a></li></NavLink>
         <NavLink to='/my-cart'><li><a>My Cart</a></li></NavLink>
     </>
 
@@ -22,7 +23,7 @@ const Navbar = () => {
 
     }
     return (
-        <div>
+        <nav id="mainNavbar">
             {/* <h2 className="text-3xl">Navbar</h2> */}
             <div className="navbar bg-base-100 border">
                 <div className="navbar-start">
@@ -79,7 +80,7 @@ const Navbar = () => {
                     }
                 </div>
             </div>
-        </div>
+        </nav>
     );
 };
 

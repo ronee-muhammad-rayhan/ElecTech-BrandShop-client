@@ -22,7 +22,7 @@ const Brands = () => {
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">{brand.name}</h2>
                                 <div className="card-actions">
-                                    <Link to={`/brands/${brand.name}`} className="btn btn-primary">See/Explore Products</Link>
+                                    <Link to={`/brands/${brand.name.toLowerCase()}`} className="btn btn-primary">See/Explore Products</Link>
                                 </div>
                             </div>
                         </div>
