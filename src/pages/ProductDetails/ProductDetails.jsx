@@ -1,9 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import TitleHelmet from "../../components/TitleHelmet";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
     const product = useLoaderData();
     const {
+        _id,
         name,
         brandName,
         type,
@@ -11,6 +13,32 @@ const ProductDetails = () => {
         rating,
         shortDescription,
         image, } = product;
+
+    const handleAddToCart = (id) => {
+        const desiredId = {
+            selectedId: id,
+        }
+        fetch("http://localhost:5003/cart-products",
+            {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(desiredId),
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Product added to the cart successfully",
+                        icon: "success",
+                        confirmButtonText: "Cool",
+                    });
+                }
+            });
+    }
     return (
         <div>
             <TitleHelmet title='ElecTech BrandShop | ProductDetails'></TitleHelmet>
@@ -40,7 +68,7 @@ const ProductDetails = () => {
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
                         </div>
-                        <button className="btn glass">Add to Cart</button>
+                        <Link onClick={() => handleAddToCart(_id)}><button className="btn glass">Add to Cart</button></Link>
                     </div>
                 </div>
             </div>
