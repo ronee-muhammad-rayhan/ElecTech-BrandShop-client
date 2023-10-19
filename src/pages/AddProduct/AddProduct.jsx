@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import TitleHelmet from "../../components/TitleHelmet";
 const AddProduct = () => {
     const handleAddProduct = (event) => {
         event.preventDefault();
@@ -55,6 +56,7 @@ const AddProduct = () => {
 
     return (
         <div className="bg-[#F4F3F0] md:p-24">
+            <TitleHelmet title='ElecTech BrandShop | AddProduct'></TitleHelmet>
             <h2 className="text-3xl font-extrabold text-center">Add a Product</h2>
             <form onSubmit={handleAddProduct}>
                 {/* form name and brandName row */}

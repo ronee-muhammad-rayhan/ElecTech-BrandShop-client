@@ -1,4 +1,4 @@
-#mainNavbar a.active{
+nav a.active{
 color: red;
 text-decoration: underline;
 font-weight: bold;

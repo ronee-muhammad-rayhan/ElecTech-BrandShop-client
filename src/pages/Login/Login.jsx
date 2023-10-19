@@ -1,3 +1,4 @@
+import TitleHelmet from "../../components/TitleHelmet";
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
@@ -22,6 +23,7 @@ const Login = () => {
 
     return (
         <div>
+            <TitleHelmet title='ElecTech BrandShop | Login'></TitleHelmet>
             <h2 className="text-3xl">Please Login</h2>
             <div className="hero min-h-screen bg-base-200 border">
                 <div className="hero-content flex-col border w-full md:w-3/4 lg:w-1/2">
