@@ -2,9 +2,12 @@ import Swal from "sweetalert2";
 import TitleHelmet from "../../components/TitleHelmet";
 // import { /* useEffect, */ useState } from "react";
 import { useLoaderData } from "react-router-dom";
+// import { useEffect, useState } from "react";
 const UpdateProduct = () => {
     const earlierProduct = useLoaderData();
-    console.log('OldData', earlierProduct);
+    // let earlierProductLoaded = useLoaderData();
+    // const [earlierProduct, setEarlierProduct] = useState(earlierProductLoaded);
+    // console.log('OldData', earlierProduct);
     // const [earlierProduct, /* setEarlierProduct */] = useState(null);
 
 
@@ -17,6 +20,9 @@ const UpdateProduct = () => {
     //         })
     // }, []);
 
+    // useEffect(() => {
+    //     setEarlierProduct(earlierProductLoaded);
+    // }, []);
 
     const handleUpdateProduct = (event) => {
         event.preventDefault();
@@ -65,10 +71,11 @@ const UpdateProduct = () => {
                         icon: "success",
                         confirmButtonText: "Cool",
                     });
+
                 }
             });
 
-        form.reset();
+        // form.reset();
     };
 
     return (
