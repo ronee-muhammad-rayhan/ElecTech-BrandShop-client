@@ -1,14 +1,26 @@
 
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom";
-const CartCard = ({ product }) => {
+const CartCard = ({ product, setCartProducts, cartProducts }) => {
     const {
+        _id,
         name,
         brandName,
         type,
         price,
         rating,
         image, } = product;
+    const handleDelete = (id) => {
+        fetch(`http://localhost:5003/cart-products/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                const remainingCartProducts = cartProducts.filter(product => product._id !== _id);
+                setCartProducts(remainingCartProducts);
+            });
+    }
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">
@@ -37,7 +49,7 @@ const CartCard = ({ product }) => {
                         </div>
                         <div className="flex flex-col items-center gap-3 justify-around pb-4">
                             <Link to={`/product-details/${product._id}`}><button className="btn glass">View Details</button></Link>
-                            <button className="btn glass">Delete from Cart</button>
+                            <button onClick={() => handleDelete(_id)} className="btn glass">Delete from Cart</button>
                         </div>
                     </div>
                 </div>
@@ -47,15 +59,20 @@ const CartCard = ({ product }) => {
 };
 
 CartCard.propTypes = {
+    cartProducts: PropTypes.shape({
+        filter: PropTypes.func
+    }),
     product: PropTypes.shape({
         _id: PropTypes.any,
+        allProducts: PropTypes.any,
         brandName: PropTypes.any,
         image: PropTypes.any,
         name: PropTypes.any,
         price: PropTypes.any,
         rating: PropTypes.any,
         type: PropTypes.any
-    })
+    }),
+    setCartProducts: PropTypes.func
 }
 
 export default CartCard;
