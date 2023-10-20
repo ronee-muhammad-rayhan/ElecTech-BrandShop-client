@@ -80,8 +80,8 @@ const Register = () => {
                                 <button className="btn btn-primary">Register</button>
                             </div>
                         </form>
-                        <p className="text-center">Already have an account? <Link className="text-blue-600" to='/login'>Login</Link></p>
-                        <p className="text-center text-red-500">{error}</p>
+                        <p className="text-center py-4">Already have an account? <Link className="text-blue-600" to='/login'>Login</Link></p>
+                        <p className="text-center text-red-500 py-4">{error}</p>
                     </div>
                 </div>
             </div>
