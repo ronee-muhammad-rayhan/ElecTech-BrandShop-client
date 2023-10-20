@@ -19,10 +19,10 @@ const Brands = () => {
                             <figure className="px-10 pt-10">
                                 <img src={`${brand.imageURL}`} alt="Shoes" className="rounded-xl" />
                             </figure>
-                            <div className="card-body items-center text-center">
+                            <div className="px-0 card-body items-center text-center">
                                 <h2 className="card-title">{brand.name}</h2>
                                 <div className="card-actions">
-                                    <Link to={`/brands/${brand.name.toLowerCase()}`} className="btn btn-primary">See/Explore Products</Link>
+                                    <Link to={`/brands/${brand.name.toLowerCase()}`} className="btn btn-primary">Explore Products</Link>
                                 </div>
                             </div>
                         </div>
