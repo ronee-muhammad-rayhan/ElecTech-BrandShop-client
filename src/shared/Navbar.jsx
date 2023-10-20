@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import './Navbar.css';
+import userDefaultPic from '../assets/user.png';
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
@@ -69,6 +70,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img src={userDefaultPic} />
+                        </div>
+                    </label>
                     {
                         user ? <>
                             <span>{user.email}</span>

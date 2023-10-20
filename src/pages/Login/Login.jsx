@@ -26,7 +26,14 @@ const Login = () => {
                 setUser(userCredential.user);
                 console.log(userCredential.user);
                 notify();
-                navigate(`${location.state}`);
+                // navigate(`${location.state}`);
+                if (location.state) {
+                    navigate(`${location.state})`);
+                } else {
+                    navigate('/');
+                }
+                // navigate after login
+                // navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
                 setError(error.message);
@@ -39,7 +46,12 @@ const Login = () => {
             .then((userCredential) => {
                 console.log(userCredential.user);
                 notify();
-                navigate(`${location.state}`);
+                // navigate(`${location.state} || ${"/"}`);
+                if (location.state) {
+                    navigate(`${location.state})`);
+                } else {
+                    navigate('/');
+                }
             })
             .catch((error) => {
                 setError(error.message);
