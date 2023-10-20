@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5003/products')
+                loader: () => fetch('https://b8a10-brandshop-server.vercel.app/products')
             },
             {
                 path: '/register',
@@ -36,22 +36,22 @@ const router = createBrowserRouter([
             {
                 path: `/update-product/:id`,
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5003/product-details/${params.id}`)
+                loader: ({ params }) => fetch(`https://b8a10-brandshop-server.vercel.app/product-details/${params.id}`)
             },
             {
                 path: '/brands/:brand',
                 element: <Brand></Brand>,
-                loader: ({ params }) => fetch(`http://localhost:5003/brands/${params.brand}`)
+                loader: ({ params }) => fetch(`https://b8a10-brandshop-server.vercel.app/brands/${params.brand}`)
             },
             {
                 path: '/product-details/:id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5003/product-details/${params.id}`)
+                loader: ({ params }) => fetch(`https://b8a10-brandshop-server.vercel.app/product-details/${params.id}`)
             },
             {
                 path: '/my-cart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5003/products`)
+                loader: () => fetch(`https://b8a10-brandshop-server.vercel.app/products`)
             },
             {
                 path: '/login',

@@ -18,7 +18,7 @@ const ProductDetails = () => {
         const desiredId = {
             selectedId: id,
         }
-        fetch("http://localhost:5003/cart-products",
+        fetch("https://b8a10-brandshop-server.vercel.app/cart-products",
             {
                 method: "POST",
                 headers: {

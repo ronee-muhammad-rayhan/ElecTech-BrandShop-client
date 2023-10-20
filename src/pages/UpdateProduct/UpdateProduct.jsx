@@ -13,7 +13,7 @@ const UpdateProduct = () => {
 
 
     // useEffect(() => {
-    //     fetch('http://localhost:5003/products/:id')
+    //     fetch('https://b8a10-brandshop-server.vercel.app/products/:id')
     //         .then(res => res.json())
     //         .then(data => {
     //             setEarlierProduct(data);
@@ -52,7 +52,7 @@ const UpdateProduct = () => {
 
         // send data to the server
         fetch(
-            `http://localhost:5003/products/${earlierProduct._id}`,
+            `https://b8a10-brandshop-server.vercel.app/products/${earlierProduct._id}`,
             {
                 method: "PUT",
                 headers: {

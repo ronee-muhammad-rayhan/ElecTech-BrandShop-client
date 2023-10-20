@@ -8,7 +8,7 @@ const MyCart = () => {
     // let productArray = [];
     useEffect(() => {
         let productArr = [];
-        fetch(`http://localhost:5003/cart-products`)
+        fetch(`https://b8a10-brandshop-server.vercel.app/cart-products`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

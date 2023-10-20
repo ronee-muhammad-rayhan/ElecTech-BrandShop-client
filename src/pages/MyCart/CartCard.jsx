@@ -11,7 +11,7 @@ const CartCard = ({ product, setCartProducts, cartProducts }) => {
         rating,
         image, } = product;
     const handleDelete = (id) => {
-        fetch(`http://localhost:5003/cart-products/${id}`, {
+        fetch(`https://b8a10-brandshop-server.vercel.app/cart-products/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
