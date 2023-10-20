@@ -15,7 +15,7 @@ const BrandCard = ({ product, /* products, setproducts */ }) => {
             <figure>
                 <img src={image} alt={`image of ${name}`} />
             </figure>
-            <div className="border-8 pr-4">
+            <div className="pr-4">
                 <div>
                     <h2 className="card-title">Name: {name}</h2>
                     <p>{brandName}</p>

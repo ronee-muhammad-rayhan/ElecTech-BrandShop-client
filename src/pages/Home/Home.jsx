@@ -44,12 +44,13 @@ const Home = () => {
         <div>
             <TitleHelmet title='ElecTech || BrandShop'></TitleHelmet>
             <h3 className="text-3xl">Home</h3>
-            <div data-aos="fade-up"
+            <div data-aos="fade-down"
                 data-aos-duration="1000"
                 data-aos-once="false"
             ><Banner></Banner></div>
             <div data-aos="flip-left"><Brands ></Brands></div>
-            <div data-aos="flip-left">
+            <h3 className="text-3xl font-extrabold text-center py-4">All Products</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-aos="flip-left">
                 {
                     products.map(product => <BrandCard key={product._id} product={product}></BrandCard>)
                 }

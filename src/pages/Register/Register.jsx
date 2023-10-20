@@ -39,13 +39,13 @@ const Register = () => {
     return (
         <div>
             <TitleHelmet title='ElecTech BrandShop | Register'></TitleHelmet>
-            <h2 className="text-3xl">Please Register</h2>
-            <div className="hero min-h-screen bg-base-200 border">
-                <div className="hero-content flex-col border w-full md:w-3/4 lg:w-1/2">
+            {/* <h2 className="text-3xl">Please Register</h2> */}
+            <div className="hero min-h-screen bg-base-200">
+                <div className="hero-content flex-col w-full md:w-3/4 lg:w-1/2">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Register now!</h1>
                     </div>
-                    <div className="card w-full shadow-2xl bg-base-100 border">
+                    <div className="card w-full shadow-2xl bg-base-100">
                         <form onSubmit={handleRegister} className="card-body">
                             <div className="form-control">
                                 <label className="label">

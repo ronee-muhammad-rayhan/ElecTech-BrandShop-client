@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <div>
-            <h3 className="text-3xl">Footer</h3>
+            {/* <h3 className="text-3xl">Footer</h3> */}
             <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
                 <nav className="grid grid-flow-col gap-4">
                     <a className="link link-hover">About us</a>
@@ -19,7 +19,7 @@ const Footer = () => {
                 </nav>
                 <aside>
                     <a href="https://brandlogos.net/dell-2016-logo-vector-91333.html">AS Cittadella logo</a>
-                    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+                    <p>Copyright © 2023 - All right reserved by ElecTech BrandShop Industries Limited</p>
                 </aside>
             </footer>
         </div>
