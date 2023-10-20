@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://b8a10-brandshop-server.vercel.app/products')
+                loader: () => fetch('https://b8a10-brandshop-server-i1sw9yjob-roneemrayhans-projects.vercel.app/products')
             },
             {
                 path: '/register',
@@ -36,22 +36,22 @@ const router = createBrowserRouter([
             {
                 path: `/update-product/:id`,
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://b8a10-brandshop-server.vercel.app/product-details/${params.id}`)
+                loader: ({ params }) => fetch(`https://b8a10-brandshop-server-i1sw9yjob-roneemrayhans-projects.vercel.app/product-details/${params.id}`)
             },
             {
                 path: '/brands/:brand',
                 element: <Brand></Brand>,
-                loader: ({ params }) => fetch(`https://b8a10-brandshop-server.vercel.app/brands/${params.brand}`)
+                loader: ({ params }) => fetch(`https://b8a10-brandshop-server-i1sw9yjob-roneemrayhans-projects.vercel.app/brands/${params.brand}`)
             },
             {
                 path: '/product-details/:id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://b8a10-brandshop-server.vercel.app/product-details/${params.id}`)
+                loader: ({ params }) => fetch(`https://b8a10-brandshop-server-i1sw9yjob-roneemrayhans-projects.vercel.app/product-details/${params.id}`)
             },
             {
                 path: '/my-cart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: () => fetch(`https://b8a10-brandshop-server.vercel.app/products`)
+                loader: () => fetch(`https://b8a10-brandshop-server-i1sw9yjob-roneemrayhans-projects.vercel.app/products`)
             },
             {
                 path: '/login',

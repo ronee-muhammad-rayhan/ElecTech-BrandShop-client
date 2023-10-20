@@ -8,6 +8,8 @@ import {
     signInWithEmailAndPassword,
     signInWithPopup,
     signOut,
+    updateEmail,
+    updateProfile,
 } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
 // import { GoogleAuthProvider } from "firebase/auth";
@@ -20,6 +22,18 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    console.log('currentUser: ', auth.currentUser);
+    const currentUserFromAuth = auth.currentUser;
+    if (currentUserFromAuth !== null) {
+        currentUserFromAuth.providerData.forEach((profile) => {
+            console.log("Sign-in provider: " + profile.providerId);
+            console.log("  Provider-specific UID: " + profile.uid);
+            console.log("  Name: " + profile.displayName);
+            console.log("  Email: " + profile.email);
+            console.log("  Photo URL: " + profile.photoURL);
+        });
+    }
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -40,6 +54,14 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
+    const updateUserProfile = (profileObj) => {
+        return updateProfile(currentUserFromAuth, profileObj);
+    }
+
+    const updateUserEmail = (email) => {
+        return updateEmail(currentUserFromAuth, email);
+    }
+
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
 
@@ -54,7 +76,7 @@ const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    const authInfo = { user, loading, setLoading, createUser, setUser, loginUser, loginWithGoogle, logOut };
+    const authInfo = { user, loading, setLoading, createUser, setUser, loginUser, loginWithGoogle, logOut, updateUserProfile, updateUserEmail };
     return (
         <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
     );
