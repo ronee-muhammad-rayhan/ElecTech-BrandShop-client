@@ -13,6 +13,7 @@ import MyCart from "../../pages/MyCart/MyCart";
 import Brand from "../../pages/Brand/Brand";
 import ProductDetails from "../../pages/ProductDetails/ProductDetails";
 import UpdateProduct from "../../pages/UpdateProduct/UpdateProduct";
+import UpdateProfile from "../../pages/UpdateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/profile',
+                element: <UpdateProfile></UpdateProfile>
             },
             {
                 path: '*',
