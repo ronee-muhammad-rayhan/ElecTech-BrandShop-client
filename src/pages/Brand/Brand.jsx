@@ -36,7 +36,7 @@ const Brand = () => {
                 {
                     products.length > 0
                         ?
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-2">{products.map(product => <BrandCard key={product._id} product={product}></BrandCard>)}</div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-2">{products.map((product, idx) => <BrandCard key={product._id} product={product} idx={idx}></BrandCard>)}</div>
                         :
                         <NoProduct></NoProduct>
                 }

@@ -8,7 +8,7 @@ const Banner = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl font-bold  text-lime-400">Hello there</h1>
                         <p className="mb-5  text-lime-400">Electech Brand Shop offers you awesome electronics technology products. You can explore and/or buy from here both online and offline. Let&quot;s have a try.  </p>
-                        <a href="#brands"><button className="btn btn-primary  text-lime-400">Get Started</button></a>
+                        <a href="#brands"><button className="btn btn-primary bg-red-400 hover:bg-lime-300 hover:text-red-500 text-white">Get Started</button></a>
                     </div>
                 </div>
             </div>
