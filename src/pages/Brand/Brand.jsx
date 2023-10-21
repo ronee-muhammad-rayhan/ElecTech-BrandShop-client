@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import BrandCard from "../../components/BrandCard";
+import NoProduct from "../../components/NoProduct";
 
 const Brand = () => {
     const products = useLoaderData();
@@ -31,9 +32,13 @@ const Brand = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-2">
+            <div>
                 {
-                    products.map(product => <BrandCard key={product._id} product={product}></BrandCard>)
+                    products.length > 0
+                        ?
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-2">{products.map(product => <BrandCard key={product._id} product={product}></BrandCard>)}</div>
+                        :
+                        <NoProduct></NoProduct>
                 }
             </div>
         </div>
