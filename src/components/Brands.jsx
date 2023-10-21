@@ -10,7 +10,7 @@ const Brands = () => {
         { id: 6, name: 'walton', imageURL: '/walton.svg' },
     ]
     return (
-        <div className="w-full mx-auto border-4 border-red-600 grid justify-center gap-4 py-8">
+        <div className="w-full mx-auto grid justify-center gap-4 py-8">
             <h3 className="text-3xl font-extrabold text-center">Popular Brands</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full mx-auto">
                 {

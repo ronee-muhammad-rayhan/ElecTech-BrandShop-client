@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Discount from "../../components/Discount";
 import Featured from "../../components/Featured";
 import Banner from "../../shared/Banner";
@@ -41,22 +41,24 @@ const Home = () => {
     });
 
     return (
-        <div>
+        <div className="flex flex-col justify-center">
             <TitleHelmet title='ElecTech || BrandShop'></TitleHelmet>
-            <h3 className="text-3xl">Home</h3>
-            <div data-aos="fade-down"
+            <div id="banner" data-aos="fade-down"
                 data-aos-duration="1000"
                 data-aos-once="false"
             ><Banner></Banner></div>
-            <div data-aos="flip-left"><Brands ></Brands></div>
-            <h3 className="text-3xl font-extrabold text-center py-4">All Products</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-aos="flip-left">
+            <div id="brands" data-aos="flip-left"><Brands ></Brands></div>
+            <h3 id="all-products" className="text-3xl font-extrabold text-center py-4">All Products</h3>
+            <div id="products" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-aos="flip-left">
                 {
-                    products.map(product => <BrandCard key={product._id} product={product}></BrandCard>)
+                    products.length <= 6 ? products.map(product => <BrandCard key={product._id} product={product}></BrandCard>) : products.slice(0, 6).map(product => <BrandCard key={product._id} product={product}></BrandCard>)
                 }
             </div>
-            <div data-aos="flip-left"><Featured></Featured></div>
-            <Discount></Discount>
+            <div className="mx-auto">{
+                products.length > 6 && <Link to={`/all-products`} className="mx-auto w-full"><button className="btn btn-secondary hover:bg-lime-500">See More</button></Link>
+            }</div>
+            <div id="featured" data-aos="flip-left"><Featured></Featured></div>
+            <div id="discount"><Discount></Discount></div>
         </div>
     );
 };

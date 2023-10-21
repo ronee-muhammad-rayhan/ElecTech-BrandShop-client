@@ -14,6 +14,7 @@ import Brand from "../../pages/Brand/Brand";
 import ProductDetails from "../../pages/ProductDetails/ProductDetails";
 import UpdateProduct from "../../pages/UpdateProduct/UpdateProduct";
 import UpdateProfile from "../../pages/UpdateProfile/UpdateProfile";
+import AllProducts from "../../pages/AllProducts/AllProducts";
 
 const router = createBrowserRouter([
     {
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
                 path: '/product-details/:id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://b8a10-brandshop-server-i1sw9yjob-roneemrayhans-projects.vercel.app/product-details/${params.id}`)
+            },
+            {
+                path: '/all-products',
+                element: <AllProducts></AllProducts>,
+                loader: () => fetch(`https://b8a10-brandshop-server-i1sw9yjob-roneemrayhans-projects.vercel.app/products`)
             },
             {
                 path: '/my-cart',
