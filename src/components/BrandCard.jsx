@@ -8,7 +8,8 @@ const BrandCard = ({ product }) => {
         type,
         price,
         rating,
-        image, } = product;
+        image,
+    } = product;
 
     return (
         <div className="card bg-base-100 shadow-xl">

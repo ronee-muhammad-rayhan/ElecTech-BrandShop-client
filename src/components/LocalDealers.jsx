@@ -1,6 +1,3 @@
-
-
-
 import PropTypes from "prop-types"
 export const Card = ({ dealer }) => {
     const { location, photo } = dealer;

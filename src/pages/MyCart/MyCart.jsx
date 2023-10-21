@@ -23,23 +23,6 @@ const MyCart = () => {
                     })
                 });
                 setCartProducts(productArr);
-
-                /* for (let i = 0; i < data.length; i++) {
-                    let foundProduct = allProducts.find(product => product._id === data[i].selectedId);
-                    console.log(foundProduct);
-                    if (foundProduct) {
-                        // [...productArray, foundProduct];
-                        setCartProducts([...cartProducts, foundProduct]);
-                    }
-                } */
-                // console.log(productArray);
-
-                // setCartProducts(productArray);
-
-                // console.log('cart-id', data.selectedId, 'all-id:');
-                // const filteredProducts = allProducts.filter(product => data.selectedId === product._id);
-                // console.log(filteredProducts);
-                // setCartProducts(filteredProducts);
             })
     }, [allProducts]);
     console.log(cartProducts);

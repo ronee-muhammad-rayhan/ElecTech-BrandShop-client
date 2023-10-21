@@ -1,28 +1,8 @@
 import Swal from "sweetalert2";
 import TitleHelmet from "../../components/TitleHelmet";
-// import { /* useEffect, */ useState } from "react";
 import { useLoaderData } from "react-router-dom";
-// import { useEffect, useState } from "react";
 const UpdateProduct = () => {
     const earlierProduct = useLoaderData();
-    // let earlierProductLoaded = useLoaderData();
-    // const [earlierProduct, setEarlierProduct] = useState(earlierProductLoaded);
-    // console.log('OldData', earlierProduct);
-    // const [earlierProduct, /* setEarlierProduct */] = useState(null);
-
-
-
-    // useEffect(() => {
-    //     fetch('https://b8a10-brandshop-server-i1sw9yjob-roneemrayhans-projects.vercel.app/products/:id')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setEarlierProduct(data);
-    //         })
-    // }, []);
-
-    // useEffect(() => {
-    //     setEarlierProduct(earlierProductLoaded);
-    // }, []);
 
     const handleUpdateProduct = (event) => {
         event.preventDefault();

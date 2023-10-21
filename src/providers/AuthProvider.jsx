@@ -12,7 +12,6 @@ import {
     updateProfile,
 } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
-// import { GoogleAuthProvider } from "firebase/auth";
 
 const providerGoogle = new GoogleAuthProvider();
 

@@ -3,19 +3,3 @@ color: red;
 text-decoration: underline;
 font-weight: bold;
 }
-
-/* *, ::before, ::after {
-    /* box-sizing: border-box; */
-    /* border-width: 0; */
-    /* border-width: 1; */
-    /* border-style: solid; */
-    /* border-color: #e5e7eb; */
-    /* border-color: #d60c59; */
-/* }  */
-
-/* .navbar {
-    box-sizing: border-box;
-    border-width: 2;
-    border-style: solid;
-    border-color: #cc0e60;
-} */
