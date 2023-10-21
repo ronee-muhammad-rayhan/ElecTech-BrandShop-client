@@ -7,7 +7,7 @@ const Brands = () => {
         { id: 3, name: 'samsung', imageURL: '/samsung.webp' },
         { id: 4, name: 'hp', imageURL: '/hp.svg.png' },
         { id: 5, name: 'dell', imageURL: '/dell.svg' },
-        { id: 6, name: 'walton', imageURL: '/walton.svg' },
+        { id: 6, name: 'walton', imageURL: '/walton.png' },
     ]
     return (
         <div className="w-full mx-auto grid justify-center gap-4 py-8">

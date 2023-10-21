@@ -1,6 +1,4 @@
 import { Link, useLoaderData } from "react-router-dom";
-import Discount from "../../components/Discount";
-import Featured from "../../components/Featured";
 import Banner from "../../shared/Banner";
 import BrandCard from "../../components/BrandCard";
 import Brands from "../../components/Brands";
