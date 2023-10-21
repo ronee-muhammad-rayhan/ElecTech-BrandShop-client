@@ -8,6 +8,7 @@ import TitleHelmet from "../../components/TitleHelmet";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import LocalDealers from "../../components/LocalDealers";
 // ..
 AOS.init();
 
@@ -43,13 +44,13 @@ const Home = () => {
     return (
         <div className="flex flex-col justify-center">
             <TitleHelmet title='ElecTech || BrandShop'></TitleHelmet>
-            <div id="banner" data-aos="fade-down"
+            <div id="banner" data-aos="flip-right"
                 data-aos-duration="1000"
                 data-aos-once="false"
             ><Banner></Banner></div>
             <div id="brands" data-aos="flip-left"><Brands ></Brands></div>
-            <h3 id="all-products" className="text-3xl font-extrabold text-center py-4">All Products</h3>
-            <div id="products" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-aos="flip-left">
+            <h3 id="all-products" className="text-3xl font-extrabold text-center py-4">All Products Section</h3>
+            <div id="products" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-aos="fade-up">
                 {
                     products.length <= 6 ? products.map(product => <BrandCard key={product._id} product={product}></BrandCard>) : products.slice(0, 6).map(product => <BrandCard key={product._id} product={product}></BrandCard>)
                 }
@@ -57,8 +58,9 @@ const Home = () => {
             <div className="mx-auto">{
                 products.length > 6 && <Link to={`/all-products`} className="mx-auto w-full"><button className="btn btn-secondary hover:bg-lime-500">See More</button></Link>
             }</div>
-            <div id="featured" data-aos="flip-left"><Featured></Featured></div>
-            <div id="discount"><Discount></Discount></div>
+            <div data-aos="flip-right"><LocalDealers></LocalDealers></div>
+            {/* <div id="featured" data-aos="flip-left"><Featured></Featured></div> */}
+            {/* <div id="discount"><Discount></Discount></div> */}
         </div>
     );
 };
