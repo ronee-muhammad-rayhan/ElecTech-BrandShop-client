@@ -28,13 +28,13 @@ const CartCard = ({ product, setCartProducts, cartProducts }) => {
                     <img src={image} alt={`image of ${name}`} />
                 </figure>
                 <div className="border-8 pr-4">
-                    <div>
+                    <div className="pl-2">
                         <h2 className="card-title">Name: {name}</h2>
-                        <p>{brandName}</p>
-                        <p>{type}</p>
-                        <p>{price}</p>
-                        <p>{rating}</p>
-                        <div className="rating rating-lg rating-half">
+                        <p>Brand: {brandName}</p>
+                        <p>Type: {type}</p>
+                        <p>Price: {price}</p>
+                        <p>Rating: {rating}</p>
+                        {/* <div className="rating rating-lg rating-half">
                             <input type="radio" name="rating-10" className="rating-hidden" />
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
@@ -46,7 +46,7 @@ const CartCard = ({ product, setCartProducts, cartProducts }) => {
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
                             <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-                        </div>
+                        </div> */}
                         <div className="flex flex-col items-center gap-3 justify-around pb-4">
                             <Link to={`/product-details/${product._id}`}><button className="btn glass">View Details</button></Link>
                             <button onClick={() => handleDelete(_id)} className="btn glass">Delete from Cart</button>

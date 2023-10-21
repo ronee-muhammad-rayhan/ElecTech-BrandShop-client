@@ -46,9 +46,9 @@ const MyCart = () => {
 
 
     return (
-        <div>
-            <h3 className="text-3xl">My Cart Page:{cartProducts?.length}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full mx-auto">
+        <div className="w-full mx-auto text-center flex justify-center flex-col">
+            <h3 className="text-3xl font-bold py-6">You have added {cartProducts?.length} Products in the Cart</h3>
+            <div className="grid justify-between grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6 w-full mx-1 md:mx-auto px-2 md:px-4 lg:px-6 border-red-400">
                 {
                     cartProducts.map(product => <CartCard key={product._id} product={product} setCartProducts={setCartProducts} cartProducts={cartProducts}></CartCard>)
                 }
