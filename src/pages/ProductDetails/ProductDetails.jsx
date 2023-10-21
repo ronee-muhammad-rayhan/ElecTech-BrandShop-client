@@ -40,35 +40,21 @@ const ProductDetails = () => {
             });
     }
     return (
-        <div>
+        <div className="py-10 px-4">
             <TitleHelmet title='ElecTech BrandShop | ProductDetails'></TitleHelmet>
-            <h3 className="text-3xl">Product Details Page</h3>
             <div className="card bg-base-100 shadow-xl">
-                <figure>
+                <figure className="text-center">
                     <img src={image} alt={`image of ${name}`} />
                 </figure>
-                <div className="border-8 pr-4">
-                    <div className="text-center">
-                        <h2 className="card-title">Name: {name}</h2>
-                        <p>{brandName}</p>
-                        <p>{type}</p>
-                        <p>{price}</p>
-                        <p>{shortDescription}</p>
-                        <p>{rating}</p>
-                        <div className="rating rating-lg rating-half">
-                            <input type="radio" name="rating-10" className="rating-hidden" />
-                            <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
-                            <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-                            <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" defaultChecked />
-                            <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-                            <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
-                            <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-                            <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
-                            <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-                            <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-1" />
-                            <input type="radio" name="rating-10" className="bg-green-500 mask mask-star-2 mask-half-2" />
-                        </div>
-                        <Link onClick={() => handleAddToCart(_id)}><button className="btn glass block mx-auto">Add to Cart</button></Link>
+                <div className="pr-4">
+                    <div className="text-center py-8">
+                        <h2 className="font-black">Name: {name}</h2>
+                        <p>Brand: {brandName}</p>
+                        <p>Type: {type}</p>
+                        <p>Price: {price}</p>
+                        <p>Short Description: {shortDescription}</p>
+                        <p className="pb-6">Rating: {rating}</p>
+                        <Link className="pb-8 pt-4" onClick={() => handleAddToCart(_id)}><button className="btn glass block mx-auto py-4 btn-primary bg-purple-500">Add to Cart</button></Link>
                     </div>
                 </div>
             </div>
