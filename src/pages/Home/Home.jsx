@@ -7,6 +7,7 @@ import TitleHelmet from "../../components/TitleHelmet";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import LocalDealers from "../../components/LocalDealers";
+import CTA from "../../components/CTA";
 // ..
 AOS.init();
 
@@ -70,6 +71,11 @@ const Home = () => {
 
             {/* <div id="featured" data-aos="flip-left"><Featured></Featured></div> */}
             {/* <div id="discount"><Discount></Discount></div> */}
+
+            {/* call-to-action section */}
+            <section className="py-12" data-aos="zoom-in">
+                <CTA />
+            </section>
 
             {/* footer section is used in the Root.jsx */}
         </div>
